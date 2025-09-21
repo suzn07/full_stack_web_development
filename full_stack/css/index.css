@@ -95,8 +95,20 @@ article {
   padding: 1rem;
 }
 
-article img {
+article h3 {
+  font-size: 20px;
+  padding: 1rem 2rem;
+}
+article .image-wrapper {
+  align-items: center;
+}
+
+article .image-wrapper img {
   max-width: 100%;
+  padding: 0 2rem;
+      width: 400px;
+        height: 200px;
+        object-fit: cover;
 }
 .product-container .product-list article p.lorem {
   color: black;
@@ -116,7 +128,8 @@ article img {
 }
 .hero-container-contact-us .information-wrapper .general_info em{
   color: #fff;
-  line-height: 25px;
+  font-size: 20px;
+  line-height: 30px;
 }
 .information-wrapper{
   display: grid;
@@ -147,21 +160,42 @@ article img {
   border: 0;
 }
 
-@media screen and (min-width: 769px) {
-  /* section {
-    display: flex;
-    flex-wrap: wrap;
-  } */
-
-  article {
-    width: 33.33%;
-  }
-  .product-list{
-    display: flex;
-  }
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 @media screen and (max-width: 768px) {
 .information-wrapper {
    grid-template-columns: 1fr;
   }
+  .container {
+    padding: 0 1rem 0 0;
+  }
+  .hero-container h1 {
+    line-height: 2rem;
+  }
+  .container .logo img {
+    width: 50px;
+  }
+    .menu_name ul {
+      gap: 1rem;
+    }
+    .hero-container .text-wrapper{
+      padding: 1rem 0;
+    }
+    .hero-container img {
+      height: unset;
+    }
+    .hero-container .description p {
+      text-align: inherit;
+    }
+    .product-banner {
+      height: 130px;
+    }
+    .product-container p {
+      text-align: unset;
+    }
+    .product-list {
+          grid-template-columns: repeat(1, 1fr);
+    }
 }
