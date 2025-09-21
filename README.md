@@ -1,2 +1,1 @@
-# full_stack_web_development
-assignment for the full-stack web development
+website link: https://users.metropolia.fi/~sujanb/full_stack/home.html
