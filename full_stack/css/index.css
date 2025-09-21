@@ -1,45 +1,58 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   font-family: 'Roboto Flex', sans-serif;
 }
-.logo{
+
+.logo {
   padding-top: 4px;
 }
-.container{
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fc7e00;
+  background-color: #c36e18;
   padding: 0 4rem 0 0;
 }
+
 .menu_name ul {
   list-style-type: none;
   display: flex;
-   justify-content: space-between;
-   gap: 6rem;
-   padding: 0;
-   margin: 0;
+  justify-content: space-between;
+  gap: 6rem;
+  padding: 0;
+  margin: 0;
 }
-.menu_name ul li a{
+
+.menu_name ul li a {
   text-decoration: unset;
-    color: #fff;
+  color: #fff;
 }
+
+.menu_name ul li a:hover {
+  color: #750000;
+}
+
 .menu_name ul li {
   font-weight: 600;
   font-size: 16px;
 }
+
 .hero-section {
   padding: 0 2rem 0 2rem;
   background-color: cornsilk;
 }
+
 .hero-container {
   margin: auto;
   background-color: #750000;
 }
+
 /* .hero-container .text-wrapper {
   padding-top: 4rem;
 } */
@@ -48,15 +61,18 @@ body{
   color: palegoldenrod;
   line-height: 8rem;
 }
+
 .hero-container img {
   width: 100%;
   height: 400px;
   object-fit: fill;
 }
-.hero-container .description{
+
+.hero-container .description {
   padding: 1rem 2rem;
 }
-.hero-container .description p{
+
+.hero-container .description p {
   color: #fff;
   line-height: 20px;
   text-align: justify;
@@ -66,13 +82,16 @@ body{
   padding: 0 2rem 0 2rem;
   background-color: cornsilk;
 }
-.product-container{
+
+.product-container {
   margin: auto;
   background-color: #750000;
 }
-.hero-container-contact-us{
-  background-color: rgb(106, 106, 106,1);
+
+.hero-container-contact-us {
+  background-color: rgb(106, 106, 106, 1);
 }
+
 .product-banner {
   height: 400px;
   background-image: url('../assests/buger_banner.jpg');
@@ -82,11 +101,13 @@ body{
   display: flex;
   background-color: #750000;
 }
+
 .product-container p {
   padding: 1rem 2rem;
   color: #fff;
   text-align: justify;
 }
+
 article {
   box-sizing: border-box;
   background-color: rgb(238, 238, 238);
@@ -99,6 +120,7 @@ article h3 {
   font-size: 20px;
   padding: 1rem 2rem;
 }
+
 article .image-wrapper {
   align-items: center;
 }
@@ -106,14 +128,16 @@ article .image-wrapper {
 article .image-wrapper img {
   max-width: 100%;
   padding: 0 2rem;
-      width: 400px;
-        height: 200px;
-        object-fit: cover;
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
 }
+
 .product-container .product-list article p.lorem {
   color: black;
   text-align: start;
 }
+
 .product-title h1 {
   color: #fff;
   text-align: center;
@@ -126,12 +150,14 @@ article .image-wrapper img {
   padding-top: 20px;
   color: #fff;
 }
-.hero-container-contact-us .information-wrapper .general_info em{
+
+.hero-container-contact-us .information-wrapper .general_info em {
   color: #fff;
   font-size: 20px;
   line-height: 30px;
 }
-.information-wrapper{
+
+.information-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -139,6 +165,7 @@ article .image-wrapper img {
   padding: 20px;
   align-items: center;
 }
+
 .information-wrapper .general_info {
   padding-left: 20px;
 }
@@ -151,6 +178,7 @@ article .image-wrapper img {
   height: 0;
   overflow: hidden;
 }
+
 .map iframe {
   position: absolute;
   top: 0;
@@ -164,38 +192,49 @@ article .image-wrapper img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 @media screen and (max-width: 768px) {
-.information-wrapper {
-   grid-template-columns: 1fr;
+  .information-wrapper {
+    grid-template-columns: 1fr;
   }
+
   .container {
     padding: 0 1rem 0 0;
   }
+
   .hero-container h1 {
     line-height: 2rem;
   }
+
   .container .logo img {
     width: 50px;
   }
-    .menu_name ul {
-      gap: 1rem;
-    }
-    .hero-container .text-wrapper{
-      padding: 1rem 0;
-    }
-    .hero-container img {
-      height: unset;
-    }
-    .hero-container .description p {
-      text-align: inherit;
-    }
-    .product-banner {
-      height: 130px;
-    }
-    .product-container p {
-      text-align: unset;
-    }
-    .product-list {
-          grid-template-columns: repeat(1, 1fr);
-    }
+
+  .menu_name ul {
+    gap: 1rem;
+  }
+
+  .hero-container .text-wrapper {
+    padding: 1rem 0;
+  }
+
+  .hero-container img {
+    height: unset;
+  }
+
+  .hero-container .description p {
+    text-align: inherit;
+  }
+
+  .product-banner {
+    height: 130px;
+  }
+
+  .product-container p {
+    text-align: unset;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
