@@ -31,11 +31,11 @@ body {
 
 .menu_name ul li a {
   text-decoration: unset;
-  color: #fff;
+  color: #000000;
 }
 
 .menu_name ul li a:hover {
-  color: #750000;
+  color: #ffffff;
 }
 
 .menu_name ul li {
