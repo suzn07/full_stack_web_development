@@ -4,7 +4,7 @@ Report of site link:
 https://users.metropolia.fi/~sujanb/full_stack/report.html
 
 JavaScript assignment
-model 1
+Module 1
 
 1. 1p
 2. 2p
@@ -15,3 +15,7 @@ model 1
 7. 2p
 8. 3p
 9. 2p
+
+Module 2
+
+1. 2p
