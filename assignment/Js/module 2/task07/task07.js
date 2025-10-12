@@ -8,7 +8,7 @@ function main() {
 
   const sides = Number(prompt("Enter the number of sides on the dice:"));
   if (sides < 1) {
-    alert("The dice must have at least 1 side!");
+    alert("The dice must have at least ome side");
     return;
   }
 
