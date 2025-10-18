@@ -1,36 +1,23 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/public', static_folder='public')
 
-html = """
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Enter Your Name</title>
-</head>
-<body>
-    <h2>Enter Your Name</h2>
-    <form method="post">
-        <input type="text" name="fName" placeholder="First Name" required>
-        <input type = "text" name = "lName" placeholder="Last Name">
-        <button type="submit">Submit</button>
-    </form>
+@app.get("/")
+def index():
+    return "Welcome to Flask REST API!"
 
-    {% if fName and lName  %}
-        <h3>Hello, {{ fName }} {{lName}}!</h3>
-    {% endif %}
-</body>
-</html>
-"""
+@app.get("/api/v1/cat")
+def get_cat():
+    cat = [{
+        "cat_id": "1",
+        "name": "angery_cat",
+        "birthdate": "2025-10-18",
+        "weight": 8,
+        "owner": "suzn",
+        "image": "/public/cat.jpg"
+    }]
+    return jsonify(cat)
 
-@app.route('/', methods=['GET', 'POST'])
-def home():
-    fName = None
-    lName = None
-    if request.method == 'POST':
-        fName = request.form['fName']
-        lName = request.form['lName']
-    return render_template_string(html, fName=fName, lName=lName)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=3000, debug=True)
