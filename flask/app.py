@@ -1,29 +1,36 @@
-import re
-from datetime import datetime
-
-from flask import Flask
+from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
 
+html = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Your Name</title>
+</head>
+<body>
+    <h2>Enter Your Name</h2>
+    <form method="post">
+        <input type="text" name="fName" placeholder="First Name" required>
+        <input type = "text" name = "lName" placeholder="Last Name">
+        <button type="submit">Submit</button>
+    </form>
 
-@app.route("/")
+    {% if fName and lName  %}
+        <h3>Hello, {{ fName }} {{lName}}!</h3>
+    {% endif %}
+</body>
+</html>
+"""
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return "Hello, Flask!"
+    fName = None
+    lName = None
+    if request.method == 'POST':
+        fName = request.form['fName']
+        lName = request.form['lName']
+    return render_template_string(html, fName=fName, lName=lName)
 
-
-@app.route("/hello/<name>")
-def hello_there(name):
-    now = datetime.now()
-    formatted_now = now.strftime("%A, %d %B, %Y at %X")
-
-    # Filter the name argument to letters only using regular expressions. URL arguments
-    # can contain arbitrary text, so we restrict to safe characters only.
-    match_object = re.match("[a-zA-Z]+", name)
-
-    if match_object:
-        clean_name = match_object.group(0)
-    else:
-        clean_name = "Friend"
-
-    content = "Hello there, " + clean_name + "! It's " + formatted_now
-    return content
+if __name__ == '__main__':
+    app.run(debug=True)
